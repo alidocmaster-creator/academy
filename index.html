@@ -112,4 +112,25 @@ document.getElementById('editorModal').addEventListener('click',e=>{if(e.target.
 document.getElementById('studentModal').addEventListener('click',e=>{if(e.target.id==='studentModal')closeStudentModal()});
 renderPublic();
 </script>
+"YOUR_EXISTING_SUPABASE_PUBLISHABLE_KEY";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  window.supabaseClient = supabaseClient;
+
+  supabaseClient
+    .from("courses")
+    .select("id")
+    .limit(1)
+    .then(({ data, error }) => {
+      if (error) {
+        alert("Supabase response: " + error.message);
+      } else {
+        alert("Connected! Courses table is reachable.");
+      }
+    });
+</script>
 </body></html>
