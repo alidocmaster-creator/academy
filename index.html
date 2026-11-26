@@ -112,7 +112,15 @@ document.getElementById('editorModal').addEventListener('click',e=>{if(e.target.
 document.getElementById('studentModal').addEventListener('click',e=>{if(e.target.id==='studentModal')closeStudentModal()});
 renderPublic();
 </script>
-"YOUR_EXISTING_SUPABASE_PUBLISHABLE_KEY";
+
+<!-- Supabase connection -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL =
+    "https://vbcmpchmjinqmgsfovhy.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "YOUR_EXISTING_SUPABASE_PUBLISHABLE_KEY";
 
   const supabaseClient = window.supabase.createClient(
     SUPABASE_URL,
@@ -133,4 +141,5 @@ renderPublic();
       }
     });
 </script>
+
 </body></html>
